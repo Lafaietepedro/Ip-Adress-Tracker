@@ -9,6 +9,7 @@ const IPTracker = () => {
   const [ipAddress, setIpAddress] = useState('');
   const [ipData, setIpData] = useState(null);
   const [mapCenter, setMapCenter] = useState([51.505, -0.09]);
+  const apiKey = import.meta.env.VITE_IPIFY_API_KEY;
 
   const customIcon = new Icon({
     iconUrl: "https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
@@ -21,7 +22,7 @@ const IPTracker = () => {
 
   const fetchIpData = async () => {
     try {
-      const geoResponse = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${import.meta.env.VITE_IPIFY_API_KEY}&ipAddress=${ipAddress}`);
+      const geoResponse = await axios.get(`https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ipAddress}`);
       setIpData(geoResponse.data);
       setMapCenter([geoResponse.data.location.lat, geoResponse.data.location.lng]);
     } catch (error) {
