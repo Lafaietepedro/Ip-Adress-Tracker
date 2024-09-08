@@ -1,58 +1,118 @@
-.App {
+/* IPTracker.css */
+.ip-tracker {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.banner  {
-    background: url('./assets/pattern-bg-desktop.png') no-repeat;
+    min-height: 100vh;
+    background-color: #f0f8ff;
+    position: relative;
+  }
+  
+  .background-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33%;
+    background: url('../src/assets/ip-address-tracker-master/images/pattern-bg-desktop.png') no-repeat;
     background-position: center;
     background-size: cover;
+    z-index: 0;
+  }
+  
+  .content {
+    position: relative;
+    z-index: 10;
     width: 100%;
-    height: 40vh;
+    max-width: 1024px;
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  
+  .form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding-bottom: 30px;
-}
-
-.banner h1 {
-    font-size: 60px;
-    color: #fff;
-    margin-bottom: 30px;
-}
-
-.banner input {
-    width: 40vw;
-    height: 4.5rem;
-    margin-bottom: 40px;
-}
-
-.show_data {
-    width: 75vw;
-    height: 20vh;
-    background-color: #816b6b;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    top: 300px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 30px -1px rgba(0, 0, 0, 0.5)
-}
-
-.data_box1, .data_box2, .data_box3, .data_box4{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-}
-
-
-.data_box2, .data_box3, .data_box4 {
-    border-left: 2px solid #000;
-    height: 10vh;
-}
+    margin-bottom: 2rem;
+  }
+  
+  .input {
+    padding: 0.75rem 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    width: 100%;
+    max-width: 36rem;
+    font-size: 1.125rem;
+    border: none;
+  }
+  
+  .button {
+    background-color: black;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .info-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .info-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .info-item {
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .info-item {
+      text-align: left;
+      border-right: 1px solid #e5e7eb;
+      padding-right: 1rem;
+    }
+  
+    .info-item:last-child {
+      border-right: none;
+    }
+  }
+  
+  .info-label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  .info-value {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .map-container {
+    width: 100%;
+    height: 30rem;
+    z-index: 0;
+  }
