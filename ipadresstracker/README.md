@@ -1,8 +1,37 @@
-# React + Vite
+# IP Address Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React + Vite application for IP and domain geolocation lookups.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search by IPv4, IPv6, or domain
+- Detect the visitor's current public IP
+- View geolocation details on an interactive map
+- Inspect reverse domains and ASN metadata when available
+- Re-run recent searches from the current session
+- Friendly loading and error handling
+
+## Setup
+
+```bash
+npm install
+cp .env.example .env
+```
+
+Add your API key to `.env`:
+
+```bash
+VITE_IPIFY_API_KEY=your_api_key_here
+```
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
